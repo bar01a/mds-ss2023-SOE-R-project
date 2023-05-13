@@ -1,90 +1,138 @@
 ---
 title: "Flugzeug-Vogel-Kollisions-Schaden"
-subtitle: "(Klassifikation)"
-author: "Gisser, Resavac, Bauer"
+subtitle: "Klassifikation"
+author: "Team: Gisser, Bauer, Resavac"
 format: 
   revealjs:
     embed-resources: true
+    theme: serif
+title-slide-attributes:
+    data-background-image: /background_image.jpg
+    data-background-opacity: "0.6"
 ---
 
-## Problemstellung
+## Teamrollen & Problemstellung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
-Vorhersage, ob die Kollision eines Flugzeuges mit Vögeln zu einem Schaden führt.
+### Rollen im Team
 
-## Dataset
++ **Projektleiterin**: Yvonne Gisser 
++ **R-Experte**: Roland Bauer 
++ **Machine Learning Experte**: Dusan Resavac
 
-- FAA wildlife strike reporting program.
-- Data: https://wildlife.faa.gov/search
+### Problemstellung
 
-## Spezial
+*- Vorhersage, ob die Kollision eines Flugzeugs mit Vögeln zu einem Schade führt -*
 
-- Imbalanced data
+**Art der Ausführung**: Klassifikation
 
-## Zielsetzung des Projekts
+## Referenzdatensatz {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
-(qualitativ und quantitativ)
+<center>~ FAA wildlife strike reporting program ~</center>
 
-## Beschreibung der Datengrundlage
++ **Daten**: [wildlife.faa.gov](https://wildlife.faa.gov/search){preview-link="true"}
++ **Spezielles an den Daten**: unausgewogen
+
+für mehr Details zum Datensatz siehe:<br>*Beschreibung des Datensatzes*</br>
+
+## Zielsetzung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+
+* qualitativ und quantitative Zielsetzung TBD
+
+## Beschreibung des Datensatzes {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
 ```{r warning=FALSE, message=FALSE}
+# necessary packages
+library(DT)
 library(tidyverse)
+```
+
+```{r warning=FALSE, message=FALSE}
+# describing data
 data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>% 
   mutate(INCIDENT_DATE = as.POSIXct(INCIDENT_DATE, format = "%d.%m.%Y %H:%M:%S"))
 ```
 
-- The dataset has `r ncol(data)` columns with `r nrow(data)` observations
-- First entry date: `r min(data$INCIDENT_DATE)`
-- Last entry date: `r max(data$INCIDENT_DATE)`
-- Count of unique airports: `r length(unique(data$AIRPORT_ID))`
-- Count of unique aircrafts: `r length(unique(data$AIRCRAFT))`
+:::: {.columns}
+::: {.column width="50%"}
+**Spalten- / <br>Variablenanzahl</br>**`r ncol(data)`
+**<br>1. Eintrittsdatum</br>**`r min(data$INCIDENT_DATE)`
+**<br>Flughäfenanzahl</br>**`r length(unique(data$AIRPORT_ID))`
+:::
+::: {.column width="50%"}
+**Zeilen- / Beobachtungsanzahl**<br>`r nrow(data)`</br>
+**letztes Eintrittsdatum**<br>`r max(data$INCIDENT_DATE)`</br>
+**Flugzeuganzahl**<br>`r length(unique(data$AIRCRAFT))`</br>
+:::
+::::
 
-## Target Variable
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
-Damage
+### Auswahl der Zielvariable
+
++ **Überlegung**: Wir möchten den Schweregrad hervorsagen 
+  + **Lösung**: Wir wählen die Variable "DAMAGE_LEVEL" als abhängige Variable / Zielvariable
+    + alle anderen Variablen mit "DAM_" beginnend werden weggelassen
+    
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+    
+### Auswahl der Prädiktoren
+  
++ **Annahme**: Wir nehmen an, dass es einige Variablen gibt, die einen Einfluss auf unsere abhängige Variable haben, darunter jene mit "STR_" beginnend
+  + **Lösung**: diese Variablen werden als unabhängige Variablen / Prädiktoren ausgewählt
+
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+
+### Beschreibung der Zielvariable
+<br></br>
 
 ```{r}
+# describing target variable
 data %>% 
   group_by(DAMAGE_LEVEL) %>% 
-  summarise(count = n()) %>% 
-  DT::datatable()
+  summarise(count = n())
 ```
 
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
+### Metrik
 
-## Projektorganisation
++ Recall für Klasse "D" (destroyed) soll mind. > 0.9 sein 
++ Rest soll als Klasse "S" (substantial) klassifiziert werden
 
-- Zusammenarbeit Code: Github Repo
-- Zusammenarbeit Orga: Teams Kanban Board
-- Projektleitung: Yvonne Gisser
-- Projektmitglieder: Dusan Resavac, Roland Bauer
+**Wichtig**:
+<br>1. Grobe Schäden dürfen nicht unerkannt bleiben</br>
+2. Es dürfen nicht zu viele False Positive entstehen<br>=> da dies in unnötigem Wartungs- bzw. Reparatur-Aufwand resultieren würde</br>
 
-## Aufgabenteilung
+## Weitere Modelle {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
++ **Basismodell**: häufigste Klasse von "DAMAGE_LEVEL"<br>=> N</br>
++ **Statisches Modell**: ? 
++ **Dynamisches Modell**: ? 
+<br></br>
+<center>**!Diese Modell machen für unseren Use Case keinen Sinn!**</center>
 
+## Projektorganisation {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
 
++ **regelmäßige Team-Meetings**:<br>finden online auf Microsoft Teams statt</br>
++ **Dokumentation des Projekts (inkl. Zeitplan, Meilensteinplan & Aufgabeneinteilung)**:<br>liegt auf dem GitHub Repository des Projekts</br>
++ **Verwaltung der Aufgaben**:<br>findet am Kanban Board des Projekts statt</br>
 
-## Plan für die Ausarbeitung des Projekts (Workflow), Backlog
+## Aufgabeneinteilung TBD
 
-- EDA (Explorative Data Analysis)
-- ...
+## Plan für die Ausarbeitung des Projekts TBD
 
-## Ziel-Metric
+### Workflow TBD
 
-- Recall für Destroyed sollte mind. > 0.9 sein
-- Rest müsste dann aber als Substantial klassifiziert werden
-- Wichtig:
-1. Grobe Schäden dürfen nicht unerkannt bleiben
-2. Zu viele False Positives wären auch schlecht (unnötiger Wartungs-Reparatur-Aufwand)
++ EDA (Explorative Data Analysis)
++ ...
 
+### Zeitplan TBD
 
-## Beantwortung von Fragen??
+### Meilensteinplan TBD
 
+### Backlog TBD
 
-
-
-
-
-
+## Beantwortung von Fragen TBD
 
 
 
