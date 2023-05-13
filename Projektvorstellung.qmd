@@ -1,0 +1,90 @@
+---
+title: "Flugzeug-Vogel-Kollisions-Schaden"
+subtitle: "(Klassifikation)"
+author: "Gisser, Resavac, Bauer"
+format: 
+  revealjs:
+    embed-resources: true
+---
+
+## Problemstellung
+
+Vorhersage, ob die Kollision eines Flugzeuges mit Vögeln zu einem Schaden führt.
+
+## Dataset
+
+- FAA wildlife strike reporting program.
+- Data: https://wildlife.faa.gov/search
+
+## Spezial
+
+- Imbalanced data
+
+## Zielsetzung des Projekts
+
+(qualitativ und quantitativ)
+
+## Beschreibung der Datengrundlage
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>% 
+  mutate(INCIDENT_DATE = as.POSIXct(INCIDENT_DATE, format = "%d.%m.%Y %H:%M:%S"))
+```
+
+- The dataset has `r ncol(data)` columns with `r nrow(data)` observations
+- First entry date: `r min(data$INCIDENT_DATE)`
+- Last entry date: `r max(data$INCIDENT_DATE)`
+- Count of unique airports: `r length(unique(data$AIRPORT_ID))`
+- Count of unique aircrafts: `r length(unique(data$AIRCRAFT))`
+
+## Target Variable
+
+Damage
+
+```{r}
+data %>% 
+  group_by(DAMAGE_LEVEL) %>% 
+  summarise(count = n()) %>% 
+  DT::datatable()
+```
+
+
+
+## Projektorganisation
+
+- Zusammenarbeit Code: Github Repo
+- Zusammenarbeit Orga: Teams Kanban Board
+- Projektleitung: Yvonne Gisser
+- Projektmitglieder: Dusan Resavac, Roland Bauer
+
+## Aufgabenteilung
+
+
+
+
+## Plan für die Ausarbeitung des Projekts (Workflow), Backlog
+
+- EDA (Explorative Data Analysis)
+- ...
+
+## Ziel-Metric
+
+- Recall für Destroyed sollte mind. > 0.9 sein
+- Rest müsste dann aber als Substantial klassifiziert werden
+- Wichtig:
+1. Grobe Schäden dürfen nicht unerkannt bleiben
+2. Zu viele False Positives wären auch schlecht (unnötiger Wartungs-Reparatur-Aufwand)
+
+
+## Beantwortung von Fragen??
+
+
+
+
+
+
+
+
+
+
