@@ -25,18 +25,19 @@ title-slide-attributes:
 
 **Art der Ausführung**: Klassifikation
 
-## Referenzdatensatz {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Ziele & Datengrundlage {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-<center> -- FAA wildlife strike reporting program --</center>
+### Zielsetzung
+
++ **qualitative Zielsetzung:** TBD
++ **quantitative Zielsetzung**: TBD
+
+### Referenzdatensatz
+
+*~ FAA wildlife strike reporting program ~*
 
 + **Daten**: [wildlife.faa.gov](https://wildlife.faa.gov/search){preview-link="true"}
 + **Spezielles an den Daten**: unausgewogen
-
-für mehr Details zum Datensatz siehe:<br>*Beschreibung des Datensatzes*</br>
-
-## Zielsetzung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
-
-* qualitativ und quantitative Zielsetzung TBD
 
 ## Beschreibung des Datensatzes {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
@@ -65,7 +66,9 @@ data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>%
 :::
 ::::
 
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+![](data_icon.png){.absolute bottom=0 right=500 width="200" height="200"}
+
+## Modell 1/4 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Auswahl der Zielvariable
 
@@ -73,14 +76,7 @@ data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>%
   + **Lösung**: Wir wählen die Variable "DAMAGE_LEVEL" als abhängige Variable / Zielvariable
     + alle anderen Variablen mit "DAM_" beginnend werden weggelassen
     
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
-    
-### Auswahl der Prädiktoren
-  
-+ **Annahme**: Wir nehmen an, dass es einige Variablen gibt, die einen Einfluss auf unsere abhängige Variable haben, darunter jene mit "STR_" beginnend
-  + **Lösung**: diese Variablen werden als unabhängige Variablen / Prädiktoren ausgewählt
-
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Modell 2/4 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Beschreibung der Zielvariable
 <br></br>
@@ -91,8 +87,15 @@ data %>%
   group_by(DAMAGE_LEVEL) %>% 
   summarise(count = n())
 ```
+    
+## Modell 3/4 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+### Auswahl der Prädiktoren
+  
++ **Annahme**: Wir nehmen an, dass es einige Variablen gibt, die einen Einfluss auf unsere abhängige Variable haben, darunter jene mit "STR_" beginnend
+  + **Lösung**: diese Variablen werden als unabhängige Variablen / Prädiktoren ausgewählt
+
+## Modell 4/4 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Metrik
 
@@ -113,16 +116,16 @@ data %>%
 ## Projektorganisation {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 + **regelmäßige Team-Meetings**:<br>finden online auf Microsoft Teams statt</br>
-+ **Dokumentation<br>_(inkl. Aufgabeneinteilung, Workflow & Meilensteinplan)_**:</br>liegt auf dem GitHub Repository des Projekts
++ **Dokumentation<br>_(inkl. Aufgabenteilung, Workflow & Meilensteinplan)_**:</br>liegt auf dem GitHub Repository des Projekts
 + **Verwaltung der Aufgaben**:<br>findet am Kanban Board des Projekts statt</br>
 
-## Aufgabeneinteilung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Aufgabenteilung 1/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-+ Die Aufgaben werden so aufgeteilt, dass jede*r in jedem Bereich des Projekts mitwirkt. Die Rollenverteilung dient dementsprechend jediglich der Information, bei welcher Person sich bei Bedarf für den jeweiligen Bereich am schnellsten Hilfe geholt werden kann. Das Ziel besteht also darin, dass sich nach Abschluss des Projekts jedes Teammitglied in allen Projektbereichen selbstsicher fühlt.
++ Die Aufgaben werden so aufgeteilt, dass jede*r in jedem Bereich des Projekts mitwirkt. Die Rollenverteilung dient dementsprechend lediglich der Information, bei welcher Person sich bei Bedarf für den jeweiligen Bereich am schnellsten Hilfe geholt werden kann. Das Ziel besteht also darin, dass sich nach Abschluss des Projekts jedes Teammitglied in allen Projektbereichen selbstsicher fühlt.
 
 + Dabei wird darauf geachtet, dass für jedes Mitglied ungefähr der gleiche Arbeitsaufwand besteht - um die Fairness zu gewährleisten.
 
-## Aufgabeneinteilung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Aufgabenteilung 2/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -140,13 +143,13 @@ data %>%
 
 ![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](project_flow_example.png)
 
-## Plan für die Ausarbeitung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Plan für die Ausarbeitung 1/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Workflow / Pipeline
 
 ![](project_workflow.png){.absolute width="900" height="500" left=100}
 
-## Plan für die Ausarbeitung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Plan für die Ausarbeitung 2/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Meilensteinplan / Zeitplan 
 
@@ -157,5 +160,5 @@ data %>%
 ## Beantwortung von Fragen {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 + **Frage unsererseits:**<br>Wie sollen wir die NAs unserer Zielvariable behandeln?</br>
-  + **Optionen**:<br>1) NAs entfernen</br>2) NAs Labels zuordnen -> Overkill? 
+  + **Optionen**:<br>1) NAs entfernen</br>2) NAs Labels zuordnen => Overkill? 
 
