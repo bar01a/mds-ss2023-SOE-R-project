@@ -113,7 +113,7 @@ data %>%
 ## Projektorganisation {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 + **regelmäßige Team-Meetings**:<br>finden online auf Microsoft Teams statt</br>
-+ **Dokumentation<br>_(inkl. Zeitplan, Meilensteinplan & Aufgabeneinteilung)_**:</br>liegt auf dem GitHub Repository des Projekts
++ **Dokumentation<br>_(inkl. Aufgabeneinteilung, Workflow & Meilensteinplan)_**:</br>liegt auf dem GitHub Repository des Projekts
 + **Verwaltung der Aufgaben**:<br>findet am Kanban Board des Projekts statt</br>
 
 ## Aufgabeneinteilung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
@@ -138,19 +138,24 @@ data %>%
 :::
 ::::
 
-![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](project_flow_image.png)
+![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](project_flow_example.png)
 
 ## Plan für die Ausarbeitung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-### Workflow / Pipleline
+### Workflow / Pipeline
 
-![](project_workflow.drawio.png){.absolute width="900" height="500" left=100}
+![](project_workflow.png){.absolute width="900" height="500" left=100}
 
-## Zeitplan TBD
+## Plan für die Ausarbeitung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-## Meilensteinplan TBD
+### Meilensteinplan / Zeitplan 
 
-## Backlog TBD
+![](milestones.png)
 
-## Beantwortung von Fragen TBD
+## Backlog TBD {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+
+## Beantwortung von Fragen {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+
++ **Frage unsererseits:**<br>Wie sollen wir die NAs unserer Zielvariable behandeln?</br>
+  + **Optionen**:<br>1) NAs entfernen</br>2) NAs Labels zuordnen -> Overkill? 
 
