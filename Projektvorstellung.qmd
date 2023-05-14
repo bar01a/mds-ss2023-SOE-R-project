@@ -7,38 +7,38 @@ format:
     embed-resources: true
     theme: serif
 title-slide-attributes:
-    data-background-image: /background_image.jpg
-    data-background-opacity: "0.6"
+    data-background-image: https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg
+    data-background-opacity: "0.4"
 ---
 
-## Teamrollen & Problemstellung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Teamrollen & Problemstellung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Rollen im Team
 
 + **Projektleiterin**: Yvonne Gisser 
 + **R-Experte**: Roland Bauer 
-+ **Machine Learning Experte**: Dusan Resavac
++ **Machine-Learning-Experte**: Dusan Resavac
 
 ### Problemstellung
 
-*- Vorhersage, ob die Kollision eines Flugzeugs mit Vögeln zu einem Schade führt -*
+*~ Vorhersage, ob die Kollision eines Flugzeugs mit Vögeln zu einem Schade führt ~*
 
 **Art der Ausführung**: Klassifikation
 
-## Referenzdatensatz {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Referenzdatensatz {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-<center>~ FAA wildlife strike reporting program ~</center>
+<center> -- FAA wildlife strike reporting program --</center>
 
 + **Daten**: [wildlife.faa.gov](https://wildlife.faa.gov/search){preview-link="true"}
 + **Spezielles an den Daten**: unausgewogen
 
 für mehr Details zum Datensatz siehe:<br>*Beschreibung des Datensatzes*</br>
 
-## Zielsetzung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Zielsetzung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 * qualitativ und quantitative Zielsetzung TBD
 
-## Beschreibung des Datensatzes {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Beschreibung des Datensatzes {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ```{r warning=FALSE, message=FALSE}
 # necessary packages
@@ -65,7 +65,7 @@ data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>%
 :::
 ::::
 
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Auswahl der Zielvariable
 
@@ -73,14 +73,14 @@ data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>%
   + **Lösung**: Wir wählen die Variable "DAMAGE_LEVEL" als abhängige Variable / Zielvariable
     + alle anderen Variablen mit "DAM_" beginnend werden weggelassen
     
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
     
 ### Auswahl der Prädiktoren
   
 + **Annahme**: Wir nehmen an, dass es einige Variablen gibt, die einen Einfluss auf unsere abhängige Variable haben, darunter jene mit "STR_" beginnend
   + **Lösung**: diese Variablen werden als unabhängige Variablen / Prädiktoren ausgewählt
 
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Beschreibung der Zielvariable
 <br></br>
@@ -92,7 +92,7 @@ data %>%
   summarise(count = n())
 ```
 
-## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Modell {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Metrik
 
@@ -101,38 +101,56 @@ data %>%
 
 **Wichtig**:
 <br>1. Grobe Schäden dürfen nicht unerkannt bleiben</br>
-2. Es dürfen nicht zu viele False Positive entstehen<br>=> da dies in unnötigem Wartungs- bzw. Reparatur-Aufwand resultieren würde</br>
+2. Die False Positive Rate darf nicht zu groß sein<br>=> da dies in unnötigem Wartungs- bzw. Reparatur-Aufwand resultieren würde</br>
 
-## Weitere Modelle {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Weitere Modelle {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 + **Basismodell**: häufigste Klasse von "DAMAGE_LEVEL"<br>=> N</br>
 + **Statisches Modell**: ? 
-+ **Dynamisches Modell**: ? 
-<br></br>
-<center>**!Diese Modell machen für unseren Use Case keinen Sinn!**</center>
++ **Dynamisches Modell**: ?<br></br>
+<center>**Diese Modelle machen für unseren Use Case keinen Sinn!**</center>
 
-## Projektorganisation {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.6"}
+## Projektorganisation {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 + **regelmäßige Team-Meetings**:<br>finden online auf Microsoft Teams statt</br>
-+ **Dokumentation des Projekts (inkl. Zeitplan, Meilensteinplan & Aufgabeneinteilung)**:<br>liegt auf dem GitHub Repository des Projekts</br>
++ **Dokumentation<br>_(inkl. Zeitplan, Meilensteinplan & Aufgabeneinteilung)_**:</br>liegt auf dem GitHub Repository des Projekts
 + **Verwaltung der Aufgaben**:<br>findet am Kanban Board des Projekts statt</br>
 
-## Aufgabeneinteilung TBD
+## Aufgabeneinteilung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-## Plan für die Ausarbeitung des Projekts TBD
++ Die Aufgaben werden so aufgeteilt, dass jede*r in jedem Bereich des Projekts mitwirkt. Die Rollenverteilung dient dementsprechend jediglich der Information, bei welcher Person sich bei Bedarf für den jeweiligen Bereich am schnellsten Hilfe geholt werden kann. Das Ziel besteht also darin, dass sich nach Abschluss des Projekts jedes Teammitglied in allen Projektbereichen selbstsicher fühlt.
 
-### Workflow TBD
++ Dabei wird darauf geachtet, dass für jedes Mitglied ungefähr der gleiche Arbeitsaufwand besteht - um die Fairness zu gewährleisten.
 
-+ EDA (Explorative Data Analysis)
-+ ...
+## Aufgabeneinteilung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-### Zeitplan TBD
+:::: {.columns}
+::: {.column width="50%"}
+**gemeinsame Aufgaben**:
+<br>- EDA</br>
+- Quantitative Analyse
+<br>- Feature Engineering</br>
+:::
+::: {.column width="50%"}
+**getrennte Aufgaben**:
+<br>- Model Fitting</br>
+- Model Tuning
+:::
+::::
 
-### Meilensteinplan TBD
+![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](project_flow_image.png)
 
-### Backlog TBD
+## Plan für die Ausarbeitung {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+
+### Workflow / Pipleline
+
+![](project_workflow.drawio.png){.absolute width="900" height="500" left=100}
+
+## Zeitplan TBD
+
+## Meilensteinplan TBD
+
+## Backlog TBD
 
 ## Beantwortung von Fragen TBD
-
-
 
