@@ -29,8 +29,9 @@ title-slide-attributes:
 
 ### Zielsetzung
 
-+ **qualitative Zielsetzung:** TBD
-+ **quantitative Zielsetzung**: TBD
++ Zur Evaluierung der finalen Ergebnisse werden sowohl der **Recall** als auch die **Precision** herangezogen. 
+
++ für mehr Informationen siehe: *Modell 4/4 - Metrik*
 
 ### Referenzdatensatz
 
@@ -66,7 +67,7 @@ data <- read_delim("data/STRIKE_REPORTS.csv", delim = ';') %>%
 :::
 ::::
 
-![](data_icon.png){.absolute bottom=0 right=500 width="200" height="200"}
+![](Bilder_für_Folien/Datensymbol.png){.absolute bottom=0 right=500 width="200" height="200"}
 
 ## Modell 1/4 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
@@ -141,19 +142,19 @@ data %>%
 :::
 ::::
 
-![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](project_flow_example.png)
+![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](Bilder_für_Folien/Projektablauf_Bsp.png)
 
 ## Plan für die Ausarbeitung 1/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Workflow / Pipeline
 
-![](project_workflow.png){.absolute width="900" height="500" left=100}
+![](Bilder_für_Folien/Pipeline_Workflow.png){.absolute width="900" height="500" left=100}
 
 ## Plan für die Ausarbeitung 2/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Meilensteinplan / Zeitplan 
 
-![](milestones.png)
+![](Bilder_für_Folien/Meilensteine.png)
 
 ## Backlog TBD {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
