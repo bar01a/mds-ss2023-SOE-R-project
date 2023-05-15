@@ -144,19 +144,23 @@ data %>%
 
 ![beispielhafter Projektablauf: Wir übernehmen seine Kategorisierung der Aufgaben](Bilder_für_Folien/Projektablauf_Bsp.png)
 
-## Plan für die Ausarbeitung 1/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Plan für die Ausarbeitung 1/3 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Pipeline / Workflow
 
 ![](Bilder_für_Folien/Pipeline_Workflow.png){.absolute width="900" height="500" left=100}
 
-## Plan für die Ausarbeitung 2/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Plan für die Ausarbeitung 2/3 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
 ### Zeitplan / Meilensteinplan
 
 ![](Bilder_für_Folien/Meilensteine.png)
 
-## Backlog TBD {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+## Plan für die Ausarbeitung 3/3 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
+
+### Backlog
+
+![](Bilder_für_Folien/Backlog.png)
 
 ## Beantwortung von Fragen {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
