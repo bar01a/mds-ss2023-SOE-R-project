@@ -146,13 +146,13 @@ data %>%
 
 ## Plan für die Ausarbeitung 1/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-### Workflow / Pipeline
+### Pipeline / Workflow
 
 ![](Bilder_für_Folien/Pipeline_Workflow.png){.absolute width="900" height="500" left=100}
 
 ## Plan für die Ausarbeitung 2/2 {background-image="https://media01.stockfood.com/largepreviews/MjE3NDc0Mzk5Mg==/70153032--Aussen-Aussen-Bewegung-Blaue-Blauer-Himmel-Farbe-Fliegen-Flug-Fluege-Flugzeug-Flugzeuge-Gerade-Geraden.jpg" background-opacity="0.4"}
 
-### Meilensteinplan / Zeitplan 
+### Zeitplan / Meilensteinplan
 
 ![](Bilder_für_Folien/Meilensteine.png)
 
